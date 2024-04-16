@@ -13,17 +13,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dicoding.ezkart.R
-import com.dicoding.ezkart.ui.theme.EzkartTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Search(modifier: Modifier = Modifier) {
+fun Search(
+    modifier: Modifier = Modifier,
+    searchQuery: String,
+    onSearchQueryChanged: (String) -> Unit
+) {
     SearchBar(
-        query = "",
-        onQueryChange = {},
+        query = searchQuery, // Menggunakan searchQuery yang diterima sebagai parameter
+        onQueryChange = {
+            onSearchQueryChanged(it)
+        },
         onSearch = {},
         active = false,
         onActiveChange = {},
@@ -42,17 +46,9 @@ fun Search(modifier: Modifier = Modifier) {
             containerColor = MaterialTheme.colorScheme.background
         ),
         modifier = modifier
-           // .padding(16.dp)
             .fillMaxWidth()
             .heightIn(min = 48.dp)
     ) {
-    }
-}
 
-@Preview(showBackground = true)
-@Composable
-fun SearchPreview() {
-    EzkartTheme {
-        Search()
     }
 }

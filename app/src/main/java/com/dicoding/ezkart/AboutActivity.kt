@@ -26,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -54,7 +55,7 @@ fun About(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("About Page") },
+                title = { Text("About") },
                 navigationIcon = {
                     IconButton(onClick = { navController.navigateUp() }) {
                         Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "back")
@@ -68,21 +69,21 @@ fun About(navController: NavController) {
                 .fillMaxSize()
                 .padding(16.dp)
                 .background(MaterialTheme.colorScheme.background),
-            verticalArrangement = Arrangement.Center, // Add this
-            horizontalAlignment = Alignment.CenterHorizontally // And this
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(16.dp))
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.edward_ardian_tayu),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(100.dp)
-                    .clip(MaterialTheme.shapes.medium),
+                    .size(150.dp),
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = "Edward Ardian Tayu", style = MaterialTheme.typography.headlineMedium)
+            Text(text = stringResource(id = R.string.about_name), style = MaterialTheme.typography.headlineMedium)
             Spacer(modifier = Modifier.height(8.dp))
-            Text(text = "edwardtayu41.com", style = MaterialTheme.typography.headlineSmall)
+            Text(text = stringResource(id = R.string.about_email), style = MaterialTheme.typography.headlineSmall)
+
         }
     }
 }

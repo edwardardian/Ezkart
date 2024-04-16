@@ -6,6 +6,7 @@ data class Menu(
     val image: Int,
     val title: String,
     val price: String,
+    var isFavorite: Boolean = false
 )
 
 val listMenu = listOf(
@@ -13,7 +14,7 @@ val listMenu = listOf(
     Menu(R.drawable.img_iphone_15, "iPhone 15", "Rp16.499.000"),
     Menu(R.drawable.img_iphone_14_pro, "iPhone 14 Pro", "Rp17.499.000"),
     Menu(R.drawable.img_samsung_z_fold_5, "Samsung Galaxy Z Fold 5", "Rp17.999.000"),
-    Menu(R.drawable.img_samsung_z_flip_5, "Samgung Galaxy Z Flip 5", "Rp24.999.000"),
+    Menu(R.drawable.img_samsung_z_flip_5, "Samsung Galaxy Z Flip 5", "Rp24.999.000"),
     Menu(R.drawable.img_samsung_s23_ultra,"Samsung Galaxy S23 Ultra", "Rp.19.999.000"),
     Menu(R.drawable.img_xiaomi_12_pro, "Xiaomi 12 Pro", "Rp.12.999.000"),
     Menu(R.drawable.img_poco_f5, "Poco F5", "Rp4.999.000"),

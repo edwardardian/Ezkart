@@ -23,7 +23,6 @@ import androidx.compose.ui.unit.dp
 import com.dicoding.ezkart.R
 import com.dicoding.ezkart.model.Menu
 
-
 @Composable
 fun ListItem(menu: Menu, modifier: Modifier = Modifier) {
     Card(
@@ -60,7 +59,6 @@ fun ListItem(menu: Menu, modifier: Modifier = Modifier) {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
